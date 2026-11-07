@@ -6,6 +6,8 @@
   <meta name="description" content="Contact Armstrong Concept about your project.">
   <title>Contact | Armstrong Concept</title>
   <style>body { margin: 0; background: #08081f; }</style>
+  <link rel="stylesheet" href="./portfolio-refresh.css">
+  <script src="./portfolio-motion.js" defer></script>
 </head>
 <body>
 <main>
@@ -88,7 +90,7 @@
     </div>
 
     <div class="ach-copy">
-      <h1 id="ach-title">Collaborate and Innovate</h1>
+      <h1 id="ach-title">Let’s talk about your project or role</h1>
       <p>
         Your next digital project deserves thoughtful design.
         Connect with me to create an engaging web experience
@@ -724,7 +726,7 @@
       <label class="acd-field" for="acd-message">
         <span>Message</span>
         <textarea id="acd-message" name="message" rows="5"
-                  placeholder="Tell me about your project"
+                  placeholder="Tell me about your project or the role you’re hiring for"
                   maxlength="1200" required></textarea>
       </label>
 
@@ -1127,7 +1129,8 @@
       return;
     }
 
-    const subject = `Portfolio enquiry — ${project}`;
+    const isRecruitment = new URLSearchParams(window.location.search).get("reason") === "recruitment";
+    const subject = isRecruitment ? "Recruitment enquiry" : `Portfolio enquiry — ${project}`;
     const body = [
       `First name: ${name}`,
       `Email: ${email}`,

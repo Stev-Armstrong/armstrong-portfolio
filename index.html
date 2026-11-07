@@ -6,6 +6,8 @@
   <meta name="description" content="Explore Armstrong Concept’s design and development portfolio.">
   <title>Armstrong Concept | Portfolio</title>
   <style>body { margin: 0; background: #08081f; }</style>
+  <link rel="stylesheet" href="./portfolio-refresh.css">
+  <script src="./portfolio-motion.js" defer></script>
 </head>
 <body>
 <style>
@@ -828,6 +830,16 @@
       </nav>
     </div>
   </header>
+  <div class="ac-intro">
+    <p class="ac-eyebrow">Armstrong Concept · Design &amp; Development</p>
+    <h1>Websites, digital products<br>and visual design.</h1>
+    <p>I’m Armstrong. I build websites, design product interfaces, and create graphics for businesses. Explore my work or get in touch about a project or role.</p>
+    <div class="ac-actions">
+      <a href="./portfolio.html">View selected work</a>
+      <a href="./contact.html">Discuss a project</a>
+      <a href="./about.html">View my profile</a>
+    </div>
+  </div>
 
   <div class="ah-background" aria-hidden="true">
     <div class="ah-dots ah-dots-left"></div>
@@ -1193,7 +1205,7 @@
   font-size: 17px;
 }
 
-#armstrong-intro h1 {
+#armstrong-intro h2 {
   position: relative;
   max-width: 1200px;
   margin: 0 auto 25px;
@@ -1204,7 +1216,7 @@
   transition: text-shadow .4s ease;
 }
 
-#armstrong-intro.ai-pointer-active h1 {
+#armstrong-intro.ai-pointer-active h2 {
   text-shadow: 0 0 35px rgba(155, 123, 255, .22);
 }
 
@@ -1569,7 +1581,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  #armstrong-intro h1 { font-size: 38px; }
+  #armstrong-intro h2 { font-size: 38px; }
   #armstrong-intro .ai-hand { width: 85px; left: 0; }
   #armstrong-intro .ai-heart { width: 110px; right: 2%; }
   #armstrong-intro .ai-arrow { width: 115px; left: 19%; top: 50px; }
@@ -1582,7 +1594,7 @@
 @media (max-width: 767px) {
   #armstrong-intro { padding: 36px 20px 55px; }
 
-  #armstrong-intro h1 {
+  #armstrong-intro h2 {
     margin-bottom: 18px;
     font-size: clamp(29px, 7.5vw, 38px);
     letter-spacing: -.8px;
@@ -1666,7 +1678,7 @@
           <span class="ai-label-star" aria-hidden="true">★</span>
           Welcome to Armstrong’s Portfolio
         </p>
-        <h1 id="armstrong-intro-title">Turning Your Design Dreams into Reality</h1>
+        <h2 id="armstrong-intro-title">How I can help</h2>
         <p class="ai-description">
           From graphic design and product design to responsive websites,
           I combine creativity and technical expertise to bring your ideas

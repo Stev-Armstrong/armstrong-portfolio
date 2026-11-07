@@ -1,0 +1,127 @@
+/* Shared layout and type for the portfolio refresh. */
+.ac-intro {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, calc(100% - 40px));
+  margin: clamp(32px, 7vw, 90px) auto 0;
+  color: #f7f6ff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.ac-intro .ac-eyebrow {
+  color: #d5c5ff;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.ac-intro h1 {
+  max-width: 17ch;
+  margin: .35em auto;
+  font-size: clamp(2rem, 5.4vw, 4.8rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.ac-intro > p:not(.ac-eyebrow) {
+  max-width: 54ch;
+  margin: 0 auto 1.4rem;
+  color: #d9d2e8;
+  line-height: 1.65;
+}
+.ac-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.ac-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .65rem 1rem;
+  border: 1px solid #8072a7;
+  border-radius: 10px;
+  background: #171335;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.ac-actions a:first-child { background: #ded2ff; color: #1d103d; }
+.ac-actions a:hover { border-color: #fff; }
+.ac-actions a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.ac-project-focus {
+  margin: .7rem 0;
+  color: #dfd2ff;
+  font-size: .875rem;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  #armstrong-site-header .arm-menu-toggle { min-height: 44px; }
+  #armstrong-site-header .arm-nav a { min-height: 44px; }
+  section#armstrong-hero .ah-stage { height: 280px; }
+  section#armstrong-hero .ah-background { height: 100%; max-height: 820px; }
+  section#armstrong-hero .ah-introduction { padding-top: 122px; }
+  section#armstrong-hero .ah-ac-logo { top: 37px; }
+  section#armstrong-hero .ah-copy p { font-size: .9375rem; line-height: 1.65; }
+  #armstrong-site-footer .arm-footer-bottom nav { justify-content: center; }
+  #armstrong-contact-details input, #armstrong-contact-details textarea { font-size: 16px; }
+  .api-filters .api-filter { min-height: 44px; }
+}
+@media (max-width: 380px) {
+  .ac-intro .ac-actions { display: grid; }
+  sectionsection#armstrong-hero { --ah-portrait-size: 175px; }
+}
+
+/* Keep the headline, supporting copy, and actions on one surface. */
+#armstrong-hero .ac-intro {
+  box-sizing: border-box;
+  width: min(1020px, calc(100% - 32px));
+  margin: clamp(24px, 4vw, 58px) auto 0;
+  padding: clamp(28px, 5.5vw, 70px) clamp(16px, 5vw, 64px);
+  border: 1px solid #c4aaff40;
+  border-radius: clamp(18px, 3vw, 32px);
+  background: radial-gradient(ellipse at top, #44306b, #1a1430 73%);
+  box-shadow: 0 20px 60px #08051866;
+  text-align: center;
+}
+#armstrong-hero .ac-intro h1 {
+  max-width: none;
+  margin: .45em auto .38em;
+  color: #fff4eb;
+  font-size: clamp(1.95rem, 5vw, 4rem);
+  letter-spacing: -.045em;
+  line-height: 1.1;
+}
+#armstrong-hero .ac-intro > p {
+  margin-inline: auto;
+  text-align: center;
+}
+#armstrong-hero .ac-intro > p:not(.ac-eyebrow) {
+  width: 100%;
+  max-width: 54ch;
+  margin: 0 auto 1.5rem;
+}
+#armstrong-hero .ac-intro .ac-eyebrow { margin-block: 0; }
+@media (max-width: 520px) {
+  #armstrong-hero .ac-intro h1 br { display: none; }
+  #armstrong-hero .ac-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 280px);
+    margin-inline: auto;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ac-scroll-enter { animation: ac-scroll-enter .52s ease-out both; }
+  @keyframes ac-scroll-enter {
+    from { opacity: .3; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+.ac-pointer-halo {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: radial-gradient(180px circle at var(--ac-pointer-x) var(--ac-pointer-y), #bc9cff1c, transparent 75%);
+}
+.ac-pointer-halo[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .ac-pointer-halo { display: none; }
+}
